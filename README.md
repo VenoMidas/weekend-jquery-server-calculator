@@ -7,3 +7,10 @@
 Your project description goes here. What problem did you solve? How did you solve it?
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+
+### Setup
+
+- [X] Create .gitignore
+- [ ] Create file structure with files
+- [ ] Link public files
+- [ ] Run Server
