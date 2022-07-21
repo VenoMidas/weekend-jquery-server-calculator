@@ -1,3 +1,54 @@
-.test {
-    color: red;
+body {
+    margin: 0;
+    background-color: #eee;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.calculator-header {
+    text-align: center;
+    background-color: teal;
+    color: #eee;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+.calculator-body {
+    border: 5px solid black;
+    background-color: #ddd;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.calculator-grid-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.calculator-display{
+    grid-column: span 4;
+    height: 73px;
+}
+
+.clear, .delete {
+    grid-column: span 2;
+}
+
+.calculator-button {
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 25px;
+}
+
+.calculator-button:hover {
+    background-color: teal;
+    color: #eee;
+}
+
+.calculator-button:active {
+    background-color: black;
+    color: #ddd;
 }

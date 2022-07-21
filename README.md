@@ -14,3 +14,5 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 - [X] Create file structure with files
 - [X] Link and source public files
 - [X] Complete server setup
+
+- [X] Create HTML calculator layout with basic styles
