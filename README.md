@@ -21,6 +21,6 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 - [X] Button clicks display on screen
 - [X] Input number and operator stored when clicking operator button
 - [X] Clear values 
-- [ ] Second input number is stored and inputs/operators added to array when = operator is clicked
+- [X] Second input number is stored and inputs/operators added to array when = operator is clicked
 - [ ] Result and operation list is appended to DOM on = operator click
 - [ ] Clear values
