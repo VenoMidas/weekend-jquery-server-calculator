@@ -30,6 +30,8 @@ body {
 .calculator-display{
     grid-column: span 4;
     height: 73px;
+    text-align: right;
+    font-size: 25px;
 }
 
 .clear, .delete {

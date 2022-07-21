@@ -16,3 +16,4 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 - [X] Complete server setup
 
 - [X] Create HTML calculator layout with basic styles
+- [X] Button clicks display on screen
