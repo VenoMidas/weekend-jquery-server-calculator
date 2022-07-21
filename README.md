@@ -11,6 +11,6 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 ### Setup
 
 - [X] Create .gitignore
-- [ ] Create file structure with files
+- [X] Create file structure with files
 - [ ] Link public files
 - [ ] Run Server
