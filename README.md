@@ -15,5 +15,12 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 - [X] Link and source public files
 - [X] Complete server setup
 
+### Functionality
+
 - [X] Create HTML calculator layout with basic styles
 - [X] Button clicks display on screen
+- [X] Input number and operator stored when clicking operator button
+- [X] Clear values 
+- [ ] Second input number is stored and inputs/operators added to array when = operator is clicked
+- [ ] Result and operation list is appended to DOM on = operator click
+- [ ] Clear values
