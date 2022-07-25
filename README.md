@@ -24,3 +24,16 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 - [X] Second input number is stored and inputs/operators added to array when = operator is clicked
 - [ ] Result and operation list is appended to DOM on = operator click
 - [ ] Clear values
+
+### README updates
+- [ ] Project Name
+- [ ] Project Description
+- [ ] Link to deployed app
+- [ ] Screenshot
+- [ ] Prerequisites
+- [ ] Installation
+- [ ] Built With
+- [ ] License
+- [ ] Acknowledgement
+- [ ] Support
+- [ ] Others like badges
