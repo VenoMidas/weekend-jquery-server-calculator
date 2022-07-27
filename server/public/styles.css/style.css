@@ -41,19 +41,26 @@ body {
 
 .calculator-button,
 .operator-button,
-.equals-button {
+.equals-button,
+.clear {
     border: 2px solid black;
     padding: 20px;
     border-radius: 10px;
     font-size: 25px;
 }
 
-.calculator-button:hover {
+.calculator-button:hover,
+.operator-button:hover,
+.equals-button:hover,
+.clear:hover {
     background-color: teal;
     color: #eee;
 }
 
-.calculator-button:active {
+.calculator-button:active,
+.operator-button:active,
+.equals-button:active,
+.clear:active {
     background-color: black;
     color: #ddd;
 }

@@ -51,7 +51,7 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 - [X] Capture this input 
 - [X] Bundle it up in an object
 - [X] Send this object to the server via a POST
-- [ ] There should also be a 'C' button that will clear the user input fields
+- [X] There should also be a 'C' button that will clear the user input fields
 - [X] Build out the server-side logic to compute the numbers as appropriate (Addition, Subtraction, Multiplication, Division)
 - [X] Once the calculation is complete, send back the OK. You should do a GET request after the POST to get the actual calculation.
 - [X] Keep a historical record of all math operations and solutions on the server.
@@ -72,11 +72,11 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 - [X] Input number and operator stored when clicking operator button
 - [X] Clear values 
 - [X] Second input number is stored when = operator is clicked
-- [ ] POST operation object to server on = click
-- [ ] Perform calculation on sever
-- [ ] GET result and operation list and append to DOM
+- [X] POST operation object to server on = click
+- [X] Perform calculation on sever
+- [X] GET result and operation list and append to DOM
 - [ ] Clear values on next operation start
-- [ ] Add functionality for "Clear" button
+- [X] Add functionality for "Clear" button
 - [ ] Add functionality for "Delete" button - not required
 
 ### README updates

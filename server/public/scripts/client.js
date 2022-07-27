@@ -29,6 +29,7 @@ function readyNow() {
     $('body').on('click', '.calculator-button', appendInput);
     $('body').on('click', '.operator-button', setFirstHalf);
     $('body').on('click', '.equals-button', processOperation);
+    $('#clear-button').on('click', clearInputs)
 };
 
 /**
@@ -126,4 +127,10 @@ function processOperation() {
     // console.log('In processOperation');
     setSecondHalf();
     sendOperationToServer();
+};
+
+function clearInputs() {
+    // console.log('in clearInputs')
+    $('.calculator-top-display').val('');
+    $('.calculator-bottom-display').val('');
 };
