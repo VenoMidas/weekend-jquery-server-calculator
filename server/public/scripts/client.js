@@ -84,8 +84,17 @@ function getResultsFromServer() {
  * will need to call GET function in .then response
  */
 function sendOperationToServer() {
-    console.log('In sendOperationToServer')
-}
+    // console.log('In sendOperationToServer')
+    $.ajax({
+        type: 'POST',
+        url: '/operation',
+        data: {
+            firstNumber: firstNumber,
+            operator: operator,
+            secondNumber: secondNumber
+        }
+    }) // .then with GET next
+};
 
 /**
  * Runs on click of "=" button
@@ -93,7 +102,7 @@ function sendOperationToServer() {
  * calls sendOperationToServer
  */
 function processOperation() {
-    console.log('In processOperation');
+    // console.log('In processOperation');
     setSecondHalf();
     sendOperationToServer();
 }
