@@ -27,7 +27,7 @@ function readyNow() {
     // Event Handlers
     $('body').on('click', '.calculator-button', appendInput);
     $('body').on('click', '.operator-button', setFirstHalf);
-    $('body').on('click', '.equals-button', setSecondHalf);
+    $('body').on('click', '.equals-button', processOperation);
 };
 
 /**
@@ -70,3 +70,30 @@ function setSecondHalf() {
     $('.calculator-top-display').val(`${firstNumber} ${operator} ${secondNumber} = `)
     $('.calculator-bottom-display').val('');
 };
+
+/**
+ * AJAX for getting results from server
+ * will be called in .then of sendOperationToServer
+ */
+function getResultsFromServer() {
+    console.log('In getResultsFromServer');
+}
+
+/**
+ * AJAX for sending info to server
+ * will need to call GET function in .then response
+ */
+function sendOperationToServer() {
+    console.log('In sendOperationToServer')
+}
+
+/**
+ * Runs on click of "=" button
+ * calls setSecondHalf
+ * calls sendOperationToServer
+ */
+function processOperation() {
+    console.log('In processOperation');
+    setSecondHalf();
+    sendOperationToServer();
+}
