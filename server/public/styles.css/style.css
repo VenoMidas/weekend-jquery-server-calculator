@@ -27,9 +27,10 @@ body {
     grid-gap: 10px;
 }
 
-.calculator-display{
+.calculator-top-display,
+.calculator-bottom-display {
     grid-column: span 4;
-    height: 73px;
+    height: 36px;
     text-align: right;
     font-size: 25px;
 }

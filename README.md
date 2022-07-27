@@ -43,6 +43,21 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 
 ## Project Checklist
 
+### Required Features
+
+- [ ] The logic for the calculator **must** be implemented on the server
+- [ ] Create a user interface where the user can input two values and the select type of mathematical operation
+- [ ] When the submit (`=` button) is clicked do the following
+- [ ] Capture this input 
+- [ ] Bundle it up in an object
+- [ ] Send this object to the server via a POST
+- [ ] There should also be a 'C' button that will clear the user input fields
+- [ ] Build out the server-side logic to compute the numbers as appropriate (Addition, Subtraction, Multiplication, Division)
+- [ ] Once the calculation is complete, send back the OK. You should do a GET request after the POST to get the actual calculation.
+- [ ] Keep a historical record of all math operations and solutions on the server.
+- [ ] Display a list of all previous calculations on the page when it loads using a GET request.
+- [ ] Update the list when a new calculation is made.
+
 ### Setup
 
 - [X] Create .gitignore
@@ -56,9 +71,13 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 - [X] Button clicks display on screen
 - [X] Input number and operator stored when clicking operator button
 - [X] Clear values 
-- [X] Second input number is stored and inputs/operators added to array when = operator is clicked
-- [ ] Result and operation list is appended to DOM on = operator click
-- [ ] Clear values
+- [X] Second input number is stored when = operator is clicked
+- [ ] POST operation object to server on = click
+- [ ] Perform calculation on sever
+- [ ] GET result and operation list and append to DOM
+- [ ] Clear values on next operation start
+- [ ] Add functionality for "Clear" button
+- [ ] Add functionality for "Delete" button - not required
 
 ### README updates
 - [X] Project Name
