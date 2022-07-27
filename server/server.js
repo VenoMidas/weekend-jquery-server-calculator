@@ -6,12 +6,18 @@ const port = process.env.PORT || 5000;
 const operationHistory = [];
 
 app.use(express.static('server/public'));
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
+// Sends operationHistory array on GET request
+app.get('/operation', (req, res) => {
+    res.send(operationHistory);
+});
+
+// Performs calculation and stores operation in operationHistory
 app.post('/operation', (req, res) => {
     // console.log(req.body);
     const operation = req.body;
-    let answer; 
+    let answer;
     switch (operation.operator) {
         case '+':
             answer = parseFloat(operation.firstNumber) + parseFloat(operation.secondNumber);
@@ -30,20 +36,8 @@ app.post('/operation', (req, res) => {
     operation.result = answer;
     operationHistory.push(operation);
     console.log(operationHistory);
+    res.sendStatus(201);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 app.listen(port, () => {
     console.log('Listening on port:', port);

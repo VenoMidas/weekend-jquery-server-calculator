@@ -45,18 +45,18 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 
 ### Required Features
 
-- [ ] The logic for the calculator **must** be implemented on the server
-- [ ] Create a user interface where the user can input two values and the select type of mathematical operation
-- [ ] When the submit (`=` button) is clicked do the following
-- [ ] Capture this input 
-- [ ] Bundle it up in an object
-- [ ] Send this object to the server via a POST
+- [X] The logic for the calculator **must** be implemented on the server
+- [X] Create a user interface where the user can input two values and the select type of mathematical operation
+- [X] When the submit (`=` button) is clicked do the following
+- [X] Capture this input 
+- [X] Bundle it up in an object
+- [X] Send this object to the server via a POST
 - [ ] There should also be a 'C' button that will clear the user input fields
-- [ ] Build out the server-side logic to compute the numbers as appropriate (Addition, Subtraction, Multiplication, Division)
-- [ ] Once the calculation is complete, send back the OK. You should do a GET request after the POST to get the actual calculation.
-- [ ] Keep a historical record of all math operations and solutions on the server.
-- [ ] Display a list of all previous calculations on the page when it loads using a GET request.
-- [ ] Update the list when a new calculation is made.
+- [X] Build out the server-side logic to compute the numbers as appropriate (Addition, Subtraction, Multiplication, Division)
+- [X] Once the calculation is complete, send back the OK. You should do a GET request after the POST to get the actual calculation.
+- [X] Keep a historical record of all math operations and solutions on the server.
+- [X] Display a list of all previous calculations on the page when it loads using a GET request.
+- [X] Update the list when a new calculation is made.
 
 ### Setup
 

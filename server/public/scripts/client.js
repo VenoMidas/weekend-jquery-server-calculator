@@ -4,7 +4,6 @@
 $(document).ready(readyNow);
 
 // Variable declarations
-
 // For the input currently being displayed - updated while entering values
 let currentDisplay;
 // For the operator button that is clicked - should have been more descriptive in name
@@ -23,6 +22,8 @@ let secondNumber;
  */
 function readyNow() {
     // console.log('Hello jQuery');
+
+    getResultsFromServer();
 
     // Event Handlers
     $('body').on('click', '.calculator-button', appendInput);
@@ -47,7 +48,7 @@ function appendInput() {
  * Stores the first half of the equation (first number and operator)
  */
 function setFirstHalf() {
-    firstNumber = newDisplay
+    firstNumber = newDisplay;
     // console.log('This is the first number', firstNumber);
     operator = $(this).data('value');
     // console.log('This is the operator', operator);
@@ -73,15 +74,30 @@ function setSecondHalf() {
 
 /**
  * AJAX for getting results from server
- * will be called in .then of sendOperationToServer
+ * Appends response to the DOM
+ * Is called on page load and in .then of sendOperationToServer
  */
 function getResultsFromServer() {
-    console.log('In getResultsFromServer');
-}
+    // console.log('In getResultsFromServer');
+    $.ajax({
+        type: 'GET',
+        url: '/operation'
+    }).then(function (response) {
+        $('#operation-history').empty();
+        for (let operation of response) {
+            $('#operation-history').append(`
+                <li>${operation.firstNumber} ${operation.operator} ${operation.secondNumber} = ${operation.result}</li>
+            `)
+        }
+    }).catch(function (error) {
+        console.log(error);
+        alert('Something went wrong!');
+    });
+};
 
 /**
  * AJAX for sending info to server
- * will need to call GET function in .then response
+ * Calls getResultsFromServer on response
  */
 function sendOperationToServer() {
     // console.log('In sendOperationToServer')
@@ -93,7 +109,12 @@ function sendOperationToServer() {
             operator: operator,
             secondNumber: secondNumber
         }
-    }) // .then with GET next
+    }).then(function (response) {
+        getResultsFromServer();
+    }).catch(function (error) {
+        console.log(error);
+        alert('Something went wrong!');
+    });
 };
 
 /**
@@ -105,4 +126,4 @@ function processOperation() {
     // console.log('In processOperation');
     setSecondHalf();
     sendOperationToServer();
-}
+};
