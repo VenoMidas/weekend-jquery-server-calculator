@@ -49,12 +49,17 @@ function appendInput() {
  * Stores the first half of the equation (first number and operator)
  */
 function setFirstHalf() {
-    firstNumber = newDisplay;
-    // console.log('This is the first number', firstNumber);
-    operator = $(this).data('value');
-    // console.log('This is the operator', operator);
-    $('.calculator-top-display').val(`${firstNumber} ${operator} `);
-    $('.calculator-bottom-display').val('');
+    if (firstNumber === '' && $(this).data('value') === '-'){
+        firstNumber = '-';
+        $('.calculator-bottom-display').val(firstNumber);
+    } else {
+        firstNumber = newDisplay;
+        // console.log('This is the first number', firstNumber);
+        operator = $(this).data('value');
+        // console.log('This is the operator', operator);
+        $('.calculator-top-display').val(`${firstNumber} ${operator} `);
+        $('.calculator-bottom-display').val('');
+    }
 };
 
 /**
