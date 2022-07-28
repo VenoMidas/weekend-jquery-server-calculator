@@ -38,6 +38,9 @@ app.post('/operation', (req, res) => {
             answer = (operation.firstNumber * operation.secondNumber);
             break;
     };
+    if (answer === undefined) {
+        answer = 0;
+    };
     // console.log(answer);
     operation.result = answer;
     operationHistory.push(operation);

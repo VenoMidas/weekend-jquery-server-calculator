@@ -9,7 +9,7 @@ let currentDisplay;
 // For the operator button that is clicked - should have been more descriptive in name
 let buttonClicked;
 // Stores the current display plus the next button clicked for continuous appendage
-let newDisplay;
+let newDisplay = '';
 // Stores the first number of the mathematical operation
 let firstNumber = '';
 // Stores the operator of the mathematical operation
@@ -68,8 +68,8 @@ function setFirstHalf() {
 function setSecondHalf() {
     if(firstNumber === ''){
         firstNumber = 0;
-        operator = '+';
-        secondNumber = 0;
+        operator = $('.calculator-top-display').val();
+        secondNumber = newDisplay;
     } else {
         secondNumber = newDisplay;
     }

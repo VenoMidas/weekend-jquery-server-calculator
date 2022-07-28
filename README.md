@@ -75,9 +75,7 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 - [X] POST operation object to server on = click
 - [X] Perform calculation on sever
 - [X] GET result and operation list and append to DOM
-- [ ] Clear values on next operation start
 - [X] Add functionality for "Clear" button
-- [ ] Add functionality for "Delete" button - not required
 
 ### README updates
 - [X] Project Name
