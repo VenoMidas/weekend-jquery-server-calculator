@@ -38,7 +38,8 @@ app.post('/operation', (req, res) => {
             answer = (operation.firstNumber * operation.secondNumber);
             break;
     };
-    if (answer === undefined) {
+    // console.log(answer);
+    if (answer === undefined || isNaN(answer)) {
         answer = 0;
     };
     // console.log(answer);

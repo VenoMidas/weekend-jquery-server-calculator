@@ -62,11 +62,7 @@ function appendInput() {
 function setFirstHalf() {
     firstNumber = newDisplay;
     // allow to input a negative number
-    if (firstNumber === '' && $(this).data('value') === '-') {
-        firstNumber = '-';
-        $('.calculator-bottom-display').val(firstNumber);
-        // defaults first number to 0 if an operater was clicked before any numbers    
-    } else if (firstNumber === '') {
+    if (firstNumber === '') {
         firstNumber = 0;
         operator = $(this).data('value');
         $('.calculator-top-display').val(`${firstNumber} ${operator} `);
@@ -86,6 +82,10 @@ function setFirstHalf() {
  * runs on '=' click
  */
 function setSecondHalf() {
+    secondNumber = newDisplay;
+    if(secondNumber === ''){
+        secondNumber = 0;
+    }
     // will do operations against '0' if no number was input first
     if (firstNumber === '') {
         firstNumber = 0;
@@ -94,10 +94,8 @@ function setSecondHalf() {
             alert('Need to input a complete operation!');
             return;
         }
-        secondNumber = newDisplay;
         $('.calculator-top-display').val(`${firstNumber} ${operator} ${secondNumber} = `)
     } else {
-        secondNumber = newDisplay;
         $('.calculator-top-display').val(`${firstNumber} ${operator} ${secondNumber} = `)
     }
     // console.log('second number', secondNumber);
