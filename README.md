@@ -65,7 +65,7 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 
 - [X] Only allow the POST call to happen if all necessary input is ready
 - [X] Allow a user to clear the history by clicking on a button, DELETE request
-- [ ] Allow a user to click on an entry in the History list to re-run that calculation
+- [X] Allow a user to click on an entry in the History list to re-run that calculation
 
 ### Setup
 
@@ -85,6 +85,13 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 - [X] Perform calculation on sever
 - [X] GET result and operation list and append to DOM
 - [X] Add functionality for "Clear" button
+
+### Final Touches
+
+- [ ] Style operation history section
+- [ ] Deploy to Heroku
+- [ ] Finish README updates
+- [ ] Test while running on Heroku
 
 ### README updates
 - [X] Project Name
