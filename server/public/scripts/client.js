@@ -88,8 +88,8 @@ function getResultsFromServer() {
         for (let operation of response) {
             $('#operation-history').append(`
                 <li>${operation.firstNumber} ${operation.operator} ${operation.secondNumber} = ${operation.result}</li>
-            `)
-        }
+            `);
+        };
     }).catch(function (error) {
         console.log(error);
         alert('Something went wrong!');
@@ -118,6 +118,22 @@ function sendOperationToServer() {
     });
 };
 
+function updateAnswer() {
+    console.log('In updateAnswer');
+    $.ajax({
+        type: 'GET',
+        url: '/answer'
+    }).then(function (response) {
+        console.log(response);
+        firstNumber = response.answer;
+        newDisplay = response.answer;
+        $('.calculator-bottom-display').val(firstNumber);
+    }).catch(function (error) {
+        console.log(error);
+        alert('Something went wrong!');
+    });
+};
+
 /**
  * Runs on click of "=" button
  * calls setSecondHalf
@@ -127,6 +143,7 @@ function processOperation() {
     // console.log('In processOperation');
     setSecondHalf();
     sendOperationToServer();
+    updateAnswer();
 };
 
 function clearInputs() {
