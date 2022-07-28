@@ -33,6 +33,7 @@ function readyNow() {
     $('body').on('click', '.equals-button', processOperation);
     $('#clear-button').on('click', clearInputs)
     $('#clear-history-button').on('click', clearOperationHistory);
+    $('select').on('change', returnDropdownValues);
 };
 
 /**
@@ -123,7 +124,7 @@ function getResultsFromServer() {
         $('#operation-history').empty();
         for (let operation of response) {
             $('#operation-history').append(`
-                <li>${operation.firstNumber} ${operation.operator} ${operation.secondNumber} = ${operation.result}</li>
+                <option class="dropdown-operation" data-first-number="${operation.firstNumber}" data-operator="${operation.operator}" data-second-number="${operation.secondNumber}" data-result="${operation.result}">${operation.firstNumber} ${operation.operator} ${operation.secondNumber} = ${operation.result}</option>
             `);
         };
     }).catch(function (error) {
@@ -212,4 +213,17 @@ function clearOperationHistory() {
         console.log(error);
         alert('Something went wrong!');
     });
+};
+
+function returnDropdownValues() {
+    // console.log('In returnDropdownValues');
+    // console.log($("#operation-history option:selected").data('first-number'));
+    currentDisplay = $("#operation-history option:selected").data('result');
+    newDisplay = $("#operation-history option:selected").data('result');
+    firstNumber = $("#operation-history option:selected").data('first-number');
+    operator = $("#operation-history option:selected").data('operator');
+    secondNumber = $("#operation-history option:selected").data('second-number');
+    $('.calculator-bottom-display').val($("#operation-history option:selected").data('result'));
+    $('.calculator-top-display').val(`${firstNumber} ${operator} ${secondNumber} = `)
+    displayingAnswer = true;    
 };
