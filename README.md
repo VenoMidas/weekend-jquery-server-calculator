@@ -25,12 +25,12 @@ Link to deployed app goes here.
 
 ## Built With
 
-1. HTML
-2. CSS
-3. JS
-4. jQuery
-5. Node.js
-6. Express.js
+1. ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+2. ![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+3. ![image](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+4. ![image](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
+5. ![image](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+6. ![image](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 
 ## License
 
@@ -88,7 +88,7 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 - [X] Prerequisites
 - [X] Installation - run npm install express
 - [X] Built With
-- [ ] License
+- [X] License
 - [X] Acknowledgement
 - [X] Support
-- [ ] Others like badges
+- [X] Others like badges
