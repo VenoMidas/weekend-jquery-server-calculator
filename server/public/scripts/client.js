@@ -11,7 +11,7 @@ let buttonClicked;
 // Stores the current display plus the next button clicked for continuous appendage
 let newDisplay;
 // Stores the first number of the mathematical operation
-let firstNumber;
+let firstNumber = '';
 // Stores the operator of the mathematical operation
 let operator;
 // Store the second number of the mathematical operation
@@ -61,7 +61,13 @@ function setFirstHalf() {
  * Stores second number of operation
  */
 function setSecondHalf() {
-    secondNumber = newDisplay;
+    if(firstNumber === ''){
+        firstNumber = 0;
+        operator = '+';
+        secondNumber = 0;
+    } else {
+        secondNumber = newDisplay;
+    }
     // console.log('second number', secondNumber);
     // let operation = {
     //     firstNumber: firstNumber,
@@ -70,7 +76,7 @@ function setSecondHalf() {
     // };
     // console.log(operation);
     $('.calculator-top-display').val(`${firstNumber} ${operator} ${secondNumber} = `)
-    $('.calculator-bottom-display').val('');
+    // $('.calculator-bottom-display').val('');
 };
 
 /**
@@ -119,15 +125,15 @@ function sendOperationToServer() {
 };
 
 function updateAnswer() {
-    console.log('In updateAnswer');
+    // console.log('In updateAnswer');
     $.ajax({
         type: 'GET',
         url: '/answer'
     }).then(function (response) {
-        console.log(response);
-        firstNumber = response.answer;
+        // console.log(response);
+        // firstNumber = response.answer;
         newDisplay = response.answer;
-        $('.calculator-bottom-display').val(firstNumber);
+        $('.calculator-bottom-display').val(newDisplay);
     }).catch(function (error) {
         console.log(error);
         alert('Something went wrong!');
@@ -150,4 +156,10 @@ function clearInputs() {
     // console.log('in clearInputs')
     $('.calculator-top-display').val('');
     $('.calculator-bottom-display').val('');
+    currentDisplay = '';
+    buttonClicked = '';
+    newDisplay = '';
+    firstNumber = '';
+    operator = '';
+    secondNumber = '';
 };
