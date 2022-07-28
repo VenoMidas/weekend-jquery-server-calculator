@@ -13,7 +13,7 @@ let newDisplay = '';
 // Stores the first number of the mathematical operation
 let firstNumber = '';
 // Stores the operator of the mathematical operation
-let operator;
+let operator = '';
 // Store the second number of the mathematical operation
 let secondNumber;
 // used to trigger when to empty inputs on button click
@@ -36,8 +36,10 @@ function readyNow() {
 
 /**
  * Appends the display when values are input
+ * runs on number and '.' click
  */
 function appendInput() {
+    // trigger to allow auto clearing of display if showing results
     if (displayingAnswer === true){
         $('.calculator-bottom-display').val('');
         $('.calculator-top-display').val('');
@@ -54,11 +56,20 @@ function appendInput() {
 
 /**
  * Stores the first half of the equation (first number and operator)
+ * runs on operator (+, -, /, *) click
  */
 function setFirstHalf() {
+    // allow to input a negative number
     if (firstNumber === '' && $(this).data('value') === '-'){
         firstNumber = '-';
         $('.calculator-bottom-display').val(firstNumber);
+    // defaults first number to 0 if an operater was clicked before any numbers    
+    } else if (firstNumber === '') {
+        firstNumber = 0
+        operator = $(this).data('value');
+        $('.calculator-top-display').val(`${firstNumber} ${operator} `);
+        $('.calculator-bottom-display').val('');
+    // take your entered numbers and store it as first number    
     } else {
         firstNumber = newDisplay;
         // console.log('This is the first number', firstNumber);
@@ -72,14 +83,22 @@ function setFirstHalf() {
 
 /**
  * Stores second number of operation
+ * runs on '=' click
  */
 function setSecondHalf() {
+    // will do operations against '0' if no number was input first
     if(firstNumber === ''){
         firstNumber = 0;
         operator = $('.calculator-top-display').val();
+        if (operator === '') {
+            alert('Need to input a complete operation!');
+            return;
+        }
         secondNumber = newDisplay;
+        $('.calculator-top-display').val(`${firstNumber} ${operator} ${secondNumber} = `)
     } else {
         secondNumber = newDisplay;
+        $('.calculator-top-display').val(`${firstNumber} ${operator} ${secondNumber} = `)
     }
     // console.log('second number', secondNumber);
     // let operation = {
@@ -88,7 +107,6 @@ function setSecondHalf() {
     //     secondNumber: secondNumber,
     // };
     // console.log(operation);
-    $('.calculator-top-display').val(`${firstNumber} ${operator} ${secondNumber} = `)
     // $('.calculator-bottom-display').val('');
     displayingAnswer = false;
 };
@@ -163,6 +181,9 @@ function updateAnswer() {
 function processOperation() {
     // console.log('In processOperation');
     setSecondHalf();
+    if (operator === '') {
+        return;
+    }
     sendOperationToServer();
     updateAnswer();
 };
