@@ -31,7 +31,7 @@ Link to deployed app goes here.
 
 ## License
 
-License goes here
+[MIT](https://choosealicense.com/licenses/mit/)
 
 ## Acknowledgement
 
