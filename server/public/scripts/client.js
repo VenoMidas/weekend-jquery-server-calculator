@@ -16,6 +16,8 @@ let firstNumber = '';
 let operator;
 // Store the second number of the mathematical operation
 let secondNumber;
+// used to trigger when to empty inputs on button click
+let displayingAnswer = false;
 
 /**
  * Function called on document load, manages event handlers
@@ -36,6 +38,10 @@ function readyNow() {
  * Appends the display when values are input
  */
 function appendInput() {
+    if (displayingAnswer === true){
+        $('.calculator-bottom-display').val('');
+        $('.calculator-top-display').val('');
+    }
     currentDisplay = $('.calculator-bottom-display').val();
     // console.log('this is the current display:', currentDisplay);
     buttonClicked = $(this).data('value');
@@ -43,6 +49,7 @@ function appendInput() {
     newDisplay = (currentDisplay + buttonClicked);
     // console.log('this is the new display:', newDisplay)
     $('.calculator-bottom-display').val(newDisplay);
+    displayingAnswer = false;
 };
 
 /**
@@ -60,6 +67,7 @@ function setFirstHalf() {
         $('.calculator-top-display').val(`${firstNumber} ${operator} `);
         $('.calculator-bottom-display').val('');
     }
+    displayingAnswer = false;
 };
 
 /**
@@ -82,6 +90,7 @@ function setSecondHalf() {
     // console.log(operation);
     $('.calculator-top-display').val(`${firstNumber} ${operator} ${secondNumber} = `)
     // $('.calculator-bottom-display').val('');
+    displayingAnswer = false;
 };
 
 /**
@@ -139,6 +148,7 @@ function updateAnswer() {
         // firstNumber = response.answer;
         newDisplay = response.answer;
         $('.calculator-bottom-display').val(newDisplay);
+        displayingAnswer = true;
     }).catch(function (error) {
         console.log(error);
         alert('Something went wrong!');
@@ -167,4 +177,5 @@ function clearInputs() {
     firstNumber = '';
     operator = '';
     secondNumber = '';
+    displayingAnswer = false;
 };
