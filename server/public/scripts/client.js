@@ -32,6 +32,7 @@ function readyNow() {
     $('body').on('click', '.operator-button', setFirstHalf);
     $('body').on('click', '.equals-button', processOperation);
     $('#clear-button').on('click', clearInputs)
+    $('#clear-history-button').on('click', clearOperationHistory);
 };
 
 /**
@@ -199,4 +200,19 @@ function clearInputs() {
     operator = '';
     secondNumber = '';
     displayingAnswer = false;
+};
+
+function clearOperationHistory() {
+    // console.log('In clearOperationHistory');
+    $.ajax({
+        method: 'DELETE',
+        url: '/deleteHistory'
+    }).then(function (response) {
+        console.log('Deleted History')
+        getResultsFromServer()
+        clearInputs()
+    }).catch(function (error) {
+        console.log(error);
+        alert('Something went wrong!');
+    });
 };

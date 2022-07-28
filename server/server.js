@@ -48,6 +48,13 @@ app.post('/operation', (req, res) => {
     res.sendStatus(201);
 });
 
+app.delete('/deleteHistory', (req, res) => {
+    // console.log(operationHistory);
+    operationHistory.length = 0;
+    // console.log(operationHistory);
+    res.sendStatus(200)
+})
+
 app.listen(port, () => {
     console.log('Listening on port:', port);
 });

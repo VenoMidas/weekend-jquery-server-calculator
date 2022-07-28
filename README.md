@@ -64,7 +64,7 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 ### Stretch Features
 
 - [X] Only allow the POST call to happen if all necessary input is ready
-- [ ] Allow a user to clear the history by clicking on a button, DELETE request
+- [X] Allow a user to clear the history by clicking on a button, DELETE request
 - [ ] Allow a user to click on an entry in the History list to re-run that calculation
 
 ### Setup
