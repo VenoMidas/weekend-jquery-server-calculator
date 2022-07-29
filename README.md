@@ -9,7 +9,7 @@ _Duration: 2 Weeks_
 
 A calculator that takes input from the client, performs the calculations on the server side, and displays the results on the client.
 
-Link to deployed app goes here.
+[Deployed version of app](https://calm-taiga-30025.herokuapp.com/)
 
 ## Screenshot
 
@@ -91,14 +91,14 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 ### Final Touches
 
 - [X] Style operation history section
-- [ ] Deploy to Heroku
-- [ ] Finish README updates
-- [ ] Test while running on Heroku
+- [X] Deploy to Heroku
+- [X] Finish README updates
+- [X] Test while running on Heroku
 
 ### README updates
 - [X] Project Name
 - [X] Project Description
-- [ ] Link to deployed app
+- [X] Link to deployed app
 - [X] Screenshot
 - [X] Prerequisites
 - [X] Installation - run npm install express
