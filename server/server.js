@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 // Sends the last result to the /answer route
 app.get('/answer', (req, res) => {
     // console.log(operationHistory[operationHistory.length - 1].result);
-    res.send({answer: operationHistory[operationHistory.length - 1].result});
+    res.send({ answer: operationHistory[operationHistory.length - 1].result });
 });
 
 // Sends operationHistory array on GET request
