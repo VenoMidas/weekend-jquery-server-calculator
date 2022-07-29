@@ -84,7 +84,7 @@ function setFirstHalf() {
  */
 function setSecondHalf() {
     secondNumber = newDisplay;
-    if(secondNumber === ''){
+    if (secondNumber === '') {
         secondNumber = 0;
     }
     // will do operations against '0' if no number was input first
@@ -122,9 +122,9 @@ function getResultsFromServer() {
         url: '/operation'
     }).then(function (response) {
         $('#operation-history').empty();
-        for (let operation of response) {
+        for (let i = response.length - 1; i >= 0; i--) {
             $('#operation-history').append(`
-                <option class="dropdown-operation" data-first-number="${operation.firstNumber}" data-operator="${operation.operator}" data-second-number="${operation.secondNumber}" data-result="${operation.result}">${operation.firstNumber} ${operation.operator} ${operation.secondNumber} = ${operation.result}</option>
+                 <option class="dropdown-operation" data-first-number="${response[i].firstNumber}" data-operator="${response[i].operator}" data-second-number="${response[i].secondNumber}" data-result="${response[i].result}">${response[i].firstNumber} ${response[i].operator} ${response[i].secondNumber} = ${response[i].result}</option>
             `);
         };
     }).catch(function (error) {
@@ -225,5 +225,5 @@ function returnDropdownValues() {
     secondNumber = $("#operation-history option:selected").data('second-number');
     $('.calculator-bottom-display').val($("#operation-history option:selected").data('result'));
     $('.calculator-top-display').val(`${firstNumber} ${operator} ${secondNumber} = `)
-    displayingAnswer = true;    
+    displayingAnswer = true;
 };
