@@ -13,6 +13,8 @@ Link to deployed app goes here.
 
 ## Screenshot
 
+![Screenshot](images/Screen%20Shot.png)
+
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
@@ -88,7 +90,7 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 
 ### Final Touches
 
-- [ ] Style operation history section
+- [X] Style operation history section
 - [ ] Deploy to Heroku
 - [ ] Finish README updates
 - [ ] Test while running on Heroku
@@ -97,7 +99,7 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 - [X] Project Name
 - [X] Project Description
 - [ ] Link to deployed app
-- [ ] Screenshot
+- [X] Screenshot
 - [X] Prerequisites
 - [X] Installation - run npm install express
 - [X] Built With
