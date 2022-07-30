@@ -25,6 +25,13 @@ A calculator that takes input from the client, performs the calculations on the 
 2. run `npm start` in your terminal. (Default port is 5000, if port is in use modify `server.js` port variable.)
 3. Navigate to `localhost:5000` in browser (if port was modified, use redifined port number)
 
+## Usage
+
+1. As a user, I want to be able to enter mathematical operations and have the result displayed on screen
+2. As a user, I want the history to be stored so I don't lose my operational history
+3. As a user, I want to be able to select a previous operation so I can rerun different scenarios
+4. As a user, I want to be able to clear the history so I can begin a new train of operations
+
 ## Built With
 
 1. ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
