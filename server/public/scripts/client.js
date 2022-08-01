@@ -36,11 +36,60 @@ function readyNow() {
     $('select').on('change', returnDropdownValues);
     $(document).keypress(function(event) {
         console.log(event.which)
-        if(event.which == 49) {
-            $('#btnOne').trigger('click');
+        switch(event.which) {
+            case 48:
+                $('#btnZero').trigger('click');
+                break;
+            case 49:
+                $('#btnOne').trigger('click');
+                break;
+            case 50:
+                $('#btnTwo').trigger('click');
+                break;
+            case 51:
+                $('#btnThree').trigger('click');
+                break;
+            case 52:
+                $('#btnFour').trigger('click');
+                break;
+            case 53:
+                $('#btnFive').trigger('click');
+                break;
+            case 54:
+                $('#btnSix').trigger('click');
+                break;
+            case 55:
+                $('#btnSeven').trigger('click');
+                break;
+            case 56:
+                $('#btnEight').trigger('click');
+                break;
+            case 57:
+                $('#btnNine').trigger('click');
+                break;
+            case 8:
+                $('#clear-button').trigger('click');
+                break;
+            case 43:
+                $('#btnPlus').trigger('click');
+                break;
+            case 45:
+                $('#btnMinus').trigger('click');
+                break;
+            case 42:
+                $('#btnMultiply').trigger('click');
+                break;
+            case 47:
+                $('#btnDivide').trigger('click');
+                break;
+            case 13:
+                $('#btnEquals').trigger('click');
+                break;
+            case 61:
+                $('#btnEquals').trigger('click');
+                break;
         }
     });
-
 };
 
 /**
