@@ -119,3 +119,8 @@ select:hover {
     background-color: red;
     color: #eee;
 }
+
+input:disabled {
+    background-color: #eee;
+    color: black;
+}
