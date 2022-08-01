@@ -25,6 +25,7 @@ let displayingAnswer = false;
 function readyNow() {
     // console.log('Hello jQuery');
 
+    // gets operation history on page load
     getResultsFromServer();
 
     // Event Handlers
@@ -34,9 +35,10 @@ function readyNow() {
     $('#clear-button').on('click', clearInputs)
     $('#clear-history-button').on('click', clearOperationHistory);
     $('select').on('change', returnDropdownValues);
-    $(document).keypress(function(event) {
-        console.log(event.which)
-        switch(event.which) {
+    // for keypress - may need to change from event.which (deprecated?) to event.key
+    $(document).keypress(function (event) {
+        // console.log(event.which)
+        switch (event.which) {
             case 48:
                 $('#btnZero').trigger('click');
                 break;
@@ -88,7 +90,10 @@ function readyNow() {
             case 61:
                 $('#btnEquals').trigger('click');
                 break;
-        }
+            case 46:
+                $('#btnDecimal').trigger('click');
+                break;
+        };
     });
 };
 
@@ -156,13 +161,6 @@ function setSecondHalf() {
         $('.calculator-top-display').val(`${firstNumber} ${operator} ${secondNumber} = `)
     }
     // console.log('second number', secondNumber);
-    // let operation = {
-    //     firstNumber: firstNumber,
-    //     operator: operator,
-    //     secondNumber: secondNumber,
-    // };
-    // console.log(operation);
-    // $('.calculator-bottom-display').val('');
     displayingAnswer = false;
 };
 
@@ -211,6 +209,10 @@ function sendOperationToServer() {
     });
 };
 
+/**
+ * Updates answer on display screen
+ * Called in processOperation function
+ */
 function updateAnswer() {
     // console.log('In updateAnswer');
     $.ajax({
@@ -232,6 +234,7 @@ function updateAnswer() {
  * Runs on click of "=" button
  * calls setSecondHalf
  * calls sendOperationToServer
+ * calls updateAnswer
  */
 function processOperation() {
     // console.log('In processOperation');
@@ -243,6 +246,9 @@ function processOperation() {
     updateAnswer();
 };
 
+/**
+ * Clears all values, resets to "blank" state
+ */
 function clearInputs() {
     // console.log('in clearInputs')
     $('.calculator-top-display').val('');
@@ -256,6 +262,11 @@ function clearInputs() {
     displayingAnswer = false;
 };
 
+/**
+ * Deletes operation history on server
+ * Calls getResultsFromServer to update DOM
+ * Calls clearInputs to achieve "blank" state
+ */
 function clearOperationHistory() {
     // console.log('In clearOperationHistory');
     $.ajax({
@@ -271,6 +282,9 @@ function clearOperationHistory() {
     });
 };
 
+/**
+ * Displays selected operation from dropdown list
+ */
 function returnDropdownValues() {
     // console.log('In returnDropdownValues');
     // console.log($("#operation-history option:selected").data('first-number'));

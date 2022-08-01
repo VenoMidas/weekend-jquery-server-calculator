@@ -19,7 +19,7 @@ app.get('/operation', (req, res) => {
     res.send(operationHistory);
 });
 
-// Performs calculation and stores operation in operationHistory
+// Performs calculation and stores operation in operationHistory on POST
 app.post('/operation', (req, res) => {
     // console.log(req.body);
     const operation = req.body;
@@ -49,6 +49,7 @@ app.post('/operation', (req, res) => {
     res.sendStatus(201);
 });
 
+// Clears operationHistory array on DELETE request
 app.delete('/deleteHistory', (req, res) => {
     // console.log(operationHistory);
     operationHistory.length = 0;
