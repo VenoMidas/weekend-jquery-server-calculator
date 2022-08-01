@@ -34,6 +34,13 @@ function readyNow() {
     $('#clear-button').on('click', clearInputs)
     $('#clear-history-button').on('click', clearOperationHistory);
     $('select').on('change', returnDropdownValues);
+    $(document).keypress(function(event) {
+        console.log(event.which)
+        if(event.which == 49) {
+            $('#btnOne').trigger('click');
+        }
+    });
+
 };
 
 /**
